@@ -21,5 +21,9 @@ Route::get('/', function () {
  */
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/libros', [App\Http\Controllers\LibrosController::class, 'index'])->name('libros');
+Route::get('/libros/create', [App\Http\Controllers\LibrosController::class, 'create'])->name('libros.create');
+
+
 Route::get('/contacto', [App\Http\Controllers\ContactoController::class, 'index'])->name('contacto');
+
 
