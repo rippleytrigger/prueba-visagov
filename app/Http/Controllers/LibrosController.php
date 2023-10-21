@@ -47,7 +47,7 @@ class LibrosController extends Controller
           ]);
           Book::create($request->all());
           return redirect()->route('libros')
-            ->with('success','Post created successfully.');
+            ->with('success','Libro Creado Exitosamente.');
     }
 
     public function update(Request $request, $id)
@@ -59,7 +59,7 @@ class LibrosController extends Controller
         $book = Book::find($id);
         $book->update($request->all());
         return redirect()->route('libros')
-        ->with('success', 'Post updated successfully.');
+        ->with('success', 'Libro actualizado exitosamente.');
     }
 
     public function destroy($id)
@@ -67,7 +67,7 @@ class LibrosController extends Controller
         $book = Book::find($id);
         $book->delete();
         return redirect()->route('libros')
-        ->with('success', 'Post deleted successfully');
+        ->with('success', 'Libro eliminado exitosamente');
     }
 
 }

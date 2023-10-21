@@ -31,5 +31,6 @@ Route::delete('/libros/destroy/{id}', [App\Http\Controllers\LibrosController::cl
 
 
 Route::get('/contacto', [App\Http\Controllers\ContactoController::class, 'index'])->name('contacto');
+Route::post('/contacto/send', [App\Http\Controllers\ContactoController::class, 'send'])->name('contacto.send');
 
 

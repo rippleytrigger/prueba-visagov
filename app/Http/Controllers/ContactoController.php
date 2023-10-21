@@ -24,4 +24,15 @@ class ContactoController extends Controller
     {
         return view('contacto');
     }
+
+    public function send(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'message' => 'required|max:255',
+          ]);
+
+          return redirect()->route('contacto')
+            ->with('success','Formulario Enviado Correctamente.');
+    }
 }
