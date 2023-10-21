@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1>Contacto</h1>
+            <h1>{{ __('contacto.header')}}</h1>
 
             <form  method="post" action="{{ route('contacto.send') }}" novalidate>
             @csrf
@@ -18,7 +18,7 @@
                 @enderror
             </div>
             <div class="form-group mb-2">
-                <label>Mensaje</label>
+                <label>{{ __('contacto.message')}}</label>
                 <textarea class="form-control @error('message') is-invalid @enderror" name="message" id="message">
                 </textarea>
                 
@@ -29,7 +29,7 @@
                 @enderror
             </div>
             <div class="d-grid mt-3">
-              <input type="submit" name="send" value="Enviar" class="btn btn-dark btn-block">
+              <input type="submit" name="send" value="{{ __('contacto.send')}}" class="btn btn-dark btn-block">
             </div>
 
             @if(Session::has('success'))

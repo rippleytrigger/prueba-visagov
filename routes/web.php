@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-/* Auth::routes();
- */
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/libros', [App\Http\Controllers\LibrosController::class, 'index'])->name('libros');
 Route::get('/libros/create', [App\Http\Controllers\LibrosController::class, 'create'])->name('libros.create');
@@ -34,3 +36,4 @@ Route::get('/contacto', [App\Http\Controllers\ContactoController::class, 'index'
 Route::post('/contacto/send', [App\Http\Controllers\ContactoController::class, 'send'])->name('contacto.send');
 
 
+});

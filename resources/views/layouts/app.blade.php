@@ -38,10 +38,22 @@
                         <!-- Authentication Links -->
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('libros') }}">{{ __('Libros') }}</a>
+                            <a class="nav-link" href="{{ route('libros') }}">{{ __('libros.link') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contacto') }}">{{ __('Contacto') }}</a>
+                            <a class="nav-link" href="{{ route('contacto') }}">{{ __('contacto.link') }}</a>
+                        </li>
+                        <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ __('lang.link') }}
+                            </a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('es') }}">{{ __('lang.spanish') }}</a></li>
+                                <li><a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL('en') }}">{{ __('lang.english') }}</a></li>
+                            </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
