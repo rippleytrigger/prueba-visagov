@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Books as Book;
+use App\Models\Book;
 
 class LibrosController extends Controller
 {
@@ -24,7 +24,8 @@ class LibrosController extends Controller
      */
     public function index()
     {
-        return view('libros');
+        $books = Book::all();
+        return view('libros', compact('books'));
     }
 
     public function create()
@@ -37,8 +38,8 @@ class LibrosController extends Controller
             'title' => 'required|max:255',
             'author' => 'required|max:255',
           ]);
-          Books::create($request->all());
-          return redirect()->route('libros.index')
+          Book::create($request->all());
+          return redirect()->route('libros')
             ->with('success','Post created successfully.');
     }
 
@@ -48,7 +49,7 @@ class LibrosController extends Controller
         'title' => 'required|max:255',
         'author' => 'required|max:255',
         ]);
-        $book = Books::find($id);
+        $book = Book::find($id);
         $book->update($request->all());
         return redirect()->route('libros.index')
         ->with('success', 'Post updated successfully.');
@@ -56,7 +57,7 @@ class LibrosController extends Controller
 
     public function destroy($id)
     {
-        $book = Books::find($id);
+        $book = Book::find($id);
         $book->delete();
         return redirect()->route('posts.index')
         ->with('success', 'Post deleted successfully');
