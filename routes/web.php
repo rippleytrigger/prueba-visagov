@@ -22,7 +22,12 @@ Route::get('/', function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/libros', [App\Http\Controllers\LibrosController::class, 'index'])->name('libros');
 Route::get('/libros/create', [App\Http\Controllers\LibrosController::class, 'create'])->name('libros.create');
+Route::get('/libros/edit/{id}', [App\Http\Controllers\LibrosController::class, 'edit'])->name('libros.edit');
+
+
 Route::post('/libros/store', [App\Http\Controllers\LibrosController::class, 'store'])->name('libros.store');
+Route::put('/libros/update/{id}', [App\Http\Controllers\LibrosController::class, 'update'])->name('libros.update');
+Route::delete('/libros/destroy/{id}', [App\Http\Controllers\LibrosController::class, 'destroy'])->name('libros.destroy');
 
 
 Route::get('/contacto', [App\Http\Controllers\ContactoController::class, 'index'])->name('contacto');

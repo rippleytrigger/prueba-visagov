@@ -26,8 +26,13 @@
                     <td>{{ $book->id }}</td>
                     <td>{{ $book->title }}</td>
                     <td>{{ $book->author }}</td>
-                    <td><button class="btn btn-warning">{{ __('Actualizar') }} </button> </td>
-                    <td><button class="btn btn-danger">{{ __('Eliminar') }} </button> </td>
+                    <td><a href="{{ route('libros.edit', $book->id) }}" class="btn btn-warning">{{ __('Actualizar') }} </a> </td>
+                    <td> <form action="{{ route('libros.destroy', $book->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
                     </tr>
                 @endforeach
                 </tbody>
