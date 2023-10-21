@@ -4,19 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+            <h1>Home</h1>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, quaerat vitae, cum enim facilis consequuntur aperiam, sapiente asperiores reiciendis libero porro officia praesentium inventore accusamus maxime ut necessitatibus fuga hic. </p>
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime similique ut id, quae amet corrupti natus quasi porro minus, aliquid minima repellendus quisquam, nemo odio magni vero recusandae eveniet! Assumenda. </p>
         </div>
     </div>
 </div>
